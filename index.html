@@ -6,8 +6,40 @@
   </head>
   <body>
     
-   <iframe src="https://script.google.com/macros/s/AKfycbxKR36J2wO30bcHjhKcR7nRrp4vKNJ8Dh58ndbV-uVg9riJ7EhihmbZuz3FyGbH5CSq/exec"
-          frameborder="0" width="100%" height="800px"></iframe>
-    
+ <!-- 1. The Parent Container centers the iframe on your external webpage -->
+<div class="apps-script-center-container">
+  <!-- Replace the 'src' with your actual Google Apps Script Executable URL (ends in /exec) -->
+  <iframe 
+    src="https://script.google.com/macros/s/AKfycbxKR36J2wO30bcHjhKcR7nRrp4vKNJ8Dh58ndbV-uVg9riJ7EhihmbZuz3FyGbH5CSq/exec" 
+    class="responsive-apps-script-iframe">
+  </iframe>
+</div>
+
+<style>
+  /* Centering Logic for the Parent Container */
+  .apps-script-center-container {
+    display: flex;
+    justify-content: center; /* Centering Horizontally */
+    align-items: center;     /* Centering Vertically */
+    min-height: 100vh;       /* Fills the whole screen height. Change to 100% if inside a specific div */
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;           /* Mobile safety spacing */
+    background-color: #f9f9f9; 
+  }
+
+  /* Responsiveness Logic for the Iframe */
+  .responsive-apps-script-iframe {
+    width: 100%;             /* Scales down cleanly on small screens */
+    max-width: 800px;        /* Limits expansion on wide desktop monitors */
+    height: 75vh;            /* Uses 75% of the screen height */
+    min-height: 450px;       /* Guarantees usability on tiny smartphones */
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  }
+</style>
+
+
   </body>
 </html>
